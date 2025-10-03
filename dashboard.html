@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistem Manajemen RS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar dan header bisa di-include ulang di setiap halaman -->
+    <nav class="sidebar"></nav>
+    <main class="main-content">
+        <header class="main-header">
+            <div class="header-title">
+                <h1 id="page-title">Dashboard</h1>
+                <p id="page-subtitle">Ringkasan aktivitas rumah sakit hari ini.</p>
+            </div>
+            <div class="header-actions">
+                <div class="notification-wrapper">
+                    <button id="notification-bell" class="icon-btn">
+                        <i class="fa-solid fa-bell"></i>
+                        <span id="notification-count" class="badge hidden">0</span>
+                    </button>
+                    <div id="notification-panel" class="dropdown-panel hidden">
+                        <div class="panel-header">Notifikasi</div>
+                        <ul id="notification-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="notification-banner" class="hidden"></div>
+        <section id="dashboard" class="page active">
+            <div class="stats-grid">
+                <div class="stat-card doctors"><div class="icon"><i class="fa-solid fa-user-doctor"></i></div><div class="info"><h3 id="stat-doctors">0</h3><p>Dokter Aktif</p></div></div>
+                <div class="stat-card patients"><div class="icon"><i class="fa-solid fa-head-side-virus"></i></div><div class="info"><h3 id="stat-patients">0</h3><p>Total Pasien</p></div></div>
+                <div class="stat-card appointments"><div class="icon"><i class="fa-solid fa-calendar-check"></i></div><div class="info"><h3 id="stat-appointments">0</h3><p>Janji Temu Hari Ini</p></div></div>
+                <div class="stat-card rooms"><div class="icon"><i class="fa-solid fa-bed-pulse"></i></div><div class="info"><h3 id="stat-rooms">0/0</h3><p>Kamar Terisi</p></div></div>
+            </div>
+            <div class="dashboard-grid">
+                <div class="card"><h2><i class="fa-solid fa-clock-rotate-left"></i> Log Aktivitas Terkini</h2><ul id="recent-activity-log" class="activity-list"></ul></div>
+                <div class="card notifications"><h2><i class="fa-solid fa-bell"></i> Notifikasi Penting</h2><div class="notification-item warning"><i class="fa-solid fa-triangle-exclamation"></i><div><h4>Dr. Kenneth Kusnadi Cuti</h4><p>Spesialis bedah, cuti hingga 30 Oktober 2024.</p></div></div><div class="notification-item info"><i class="fa-solid fa-circle-info"></i><div><h4>Vaksinasi Flu Tersedia</h4><p>Layanan vaksinasi flu kini tersedia di Poli Umum.</p></div></div></div>
+            </div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/init-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/dashboard.js"></script>
+    <!-- Login check di-nonaktifkan agar tidak muncul pesan error/JS di panel admin -->
+</body>
+</html>
 

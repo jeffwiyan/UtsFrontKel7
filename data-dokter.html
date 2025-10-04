@@ -1,1 +1,45 @@
-
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Dokter - Sistem Manajemen RS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="main-content">
+        <section id="data-dokter" class="page active">
+            <div class="toolbar"><input type="text" id="doctor-search" placeholder="Cari dokter..."><button id="btn-tambah-dokter" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Tambah Dokter</button></div>
+            <div class="table-container"><table class="data-table"><thead><tr><th>Nama Dokter</th><th>Spesialisasi</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="doctor-table-body"></tbody></table></div>
+            <!-- Modal Form Dokter -->
+            <div id="modal-dokter" class="hidden modal-bg">
+                <div class="modal">
+                    <h2 id="modal-title-dokter">Tambah/Edit Dokter</h2>
+                    <form id="form-dokter">
+                        <input type="hidden" id="dokter-id">
+                        <div class="form-group"><label>Nama</label><input type="text" id="modal-nama-dokter" required></div>
+                        <div class="form-group"><label>Spesialisasi</label><input type="text" id="modal-spec-dokter" required></div>
+                        <div class="form-group"><label>Status</label><select id="modal-status-dokter"><option value="Aktif">Aktif</option><option value="Cuti">Cuti</option></select></div>
+                        <div class="form-actions"><button type="submit" class="btn btn-primary">Simpan</button><button type="button" class="btn btn-secondary" id="btn-batal-modal-dokter">Batal</button></div>
+                    </form>
+                </div>
+            </div>
+            <style>
+            .modal-bg { position: fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; z-index:1000; }
+            .modal { background:#fff; border-radius:1rem; padding:2rem; min-width:320px; max-width:90vw; box-shadow:0 8px 32px rgba(0,0,0,0.18); }
+            .modal .form-group { margin-bottom:1rem; }
+            .modal .form-actions { display:flex; gap:1rem; justify-content:flex-end; }
+            </style>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="js/init-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/data-dokter.js"></script>
+</body>
+</html>

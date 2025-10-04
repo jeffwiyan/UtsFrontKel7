@@ -1,1 +1,47 @@
-
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrian - Sistem Manajemen RS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="main-content">
+        <section id="antrian" class="page active">
+            <div class="queue-grid">
+                <div class="queue-card poli-umum"><h3>Poli Umum</h3><p>Nomor Antrian</p>
+                  <div class="current-number" id="queue-umum">A01
+                  </div>
+                  <button class="btn btn-primary next-queue-btn" data-poli="umum">Panggil Berikutnya <i class="fa-solid fa-arrow-right"></i></button>
+                  <div class="waiting-list"><h4>Daftar Tunggu:</h4><ul id="waiting-list-umum"><li>Tidak ada pasien menunggu</li></ul>
+                  </div>
+                </div>
+                <div class="queue-card poli-anak"><h3>Poli Anak</h3><p>Nomor Antrian</p>
+                  <div class="current-number" id="queue-anak">B01
+                  </div>
+                  <button class="btn btn-primary next-queue-btn" data-poli="anak">Panggil Berikutnya <i class="fa-solid fa-arrow-right"></i></button>
+                  <div class="waiting-list"><h4>Daftar Tunggu:</h4><ul id="waiting-list-anak"><li>Tidak ada pasien menunggu</li></ul>
+                  </div>
+                </div>
+                <div class="queue-card poli-bedah"><h3>Poli Bedah</h3><p>Nomor Antrian</p>
+                  <div class="current-number" id="queue-bedah">C01
+                  </div>
+                  <button class="btn btn-primary next-queue-btn" data-poli="bedah">Panggil Berikutnya <i class="fa-solid fa-arrow-right"></i></button>
+                  <div class="waiting-list"><h4>Daftar Tunggu:</h4><ul id="waiting-list-bedah"><li>Tidak ada pasien menunggu</li></ul>
+                  </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="js/init-data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/antrian.js"></script>
+</body>
+</html>

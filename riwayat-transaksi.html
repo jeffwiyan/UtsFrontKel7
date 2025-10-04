@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riwayat Transaksi - Sistem Manajemen RS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="sidebar">
+      <div class="logo">
+        <i class="fa-solid fa-hospital"></i><span>RS Sehat Selalu</span>
+      </div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="dashboard.html" class="nav-link"
+            ><i class="fa-solid fa-house-chimney"></i> <span>Dashboard</span></a
+          >
+        </li>
+        <li class="menu-header"><span>Administrasi</span></li>
+        <li>
+          <a href="pembayaran.html" class="nav-link"
+            ><i class="fa-solid fa-money-bill-wave"></i>
+            <span>Pembayaran</span></a
+          >
+        </li>
+        <li>
+          <a href="riwayat-transaksi.html" class="nav-link active"
+            ><i class="fa-solid fa-clock-rotate-left"></i>
+            <span>Riwayat Transaksi</span></a
+          >
+        </li>
+        <li>
+          <a href="laporan.html" class="nav-link"
+            ><i class="fa-solid fa-chart-line"></i> <span>Laporan</span></a
+          >
+        </li>
+        <li>
+          <a href="bantuan.html" class="nav-link"
+            ><i class="fa-solid fa-circle-question"></i> <span>Bantuan</span></a
+          >
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="profil.html" class="nav-link"
+          ><i class="fa-solid fa-user-gear"></i>
+          <span id="username-display">Admin</span></a
+        >
+        <a href="#" id="logout-btn"
+          ><i class="fa-solid fa-right-from-bracket"></i> <span>Keluar</span></a
+        >
+      </div>
+    </nav>
+    <main class="main-content">
+      <section id="riwayat-transaksi" class="page active">
+        <h2>Riwayat Transaksi</h2>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Tanggal</th>
+                <th>Pasien</th>
+                <th>Total</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="riwayat-transaksi-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="js/pembayaran.js"></script>
+  </body>
+</html>
 

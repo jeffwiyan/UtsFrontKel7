@@ -1,1 +1,57 @@
-
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok Obat - Sistem Manajemen RS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo"><i class="fa-solid fa-hospital"></i><span>RS Sehat Selalu</span></div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html" class="nav-link"><i class="fa-solid fa-house-chimney"></i> <span>Dashboard</span></a></li>
+            <li class="menu-header"><span>Pasien & Dokter</span></li>
+            <li><a href="pendaftaran.html" class="nav-link"><i class="fa-solid fa-user-plus"></i> <span>Pendaftaran</span></a></li>
+            <li><a href="data-pasien.html" class="nav-link"><i class="fa-solid fa-users"></i> <span>Data Pasien</span></a></li>
+            <li><a href="data-dokter.html" class="nav-link"><i class="fa-solid fa-user-doctor"></i> <span>Data Dokter</span></a></li>
+            <li><a href="janji-temu.html" class="nav-link"><i class="fa-solid fa-calendar-check"></i> <span>Janji Temu</span></a></li>
+            <li class="menu-header"><span>Operasional</span></li>
+            <li><a href="antrian.html" class="nav-link"><i class="fa-solid fa-clock"></i> <span>Antrian</span></a></li>
+            <li><a href="manajemen-kamar.html" class="nav-link"><i class="fa-solid fa-bed-pulse"></i> <span>Manajemen Kamar</span></a></li>
+            <li><a href="laboratorium.html" class="nav-link"><i class="fa-solid fa-flask-vial"></i> <span>Laboratorium</span></a></li>
+            <li class="menu-header"><span>Farmasi & Logistik</span></li>
+            <li><a href="apotek.html" class="nav-link"><i class="fa-solid fa-pills"></i> <span>Apotek</span></a></li>
+            <li><a href="stok-obat.html" class="nav-link active"><i class="fa-solid fa-box-archive"></i> <span>Stok Obat</span></a></li>
+            <li><a href="inventaris.html" class="nav-link"><i class="fa-solid fa-dolly"></i> <span>Inventaris</span></a></li>
+            <li class="menu-header"><span>Administrasi</span></li>
+            <li><a href="pembayaran.html" class="nav-link"><i class="fa-solid fa-money-bill-wave"></i> <span>Pembayaran</span></a></li>
+            <li><a href="laporan.html" class="nav-link"><i class="fa-solid fa-chart-line"></i> <span>Laporan</span></a></li>
+            <li><a href="bantuan.html" class="nav-link"><i class="fa-solid fa-circle-question"></i> <span>Bantuan</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="profil.html" class="nav-link"><i class="fa-solid fa-user-gear"></i> <span id="username-display">Admin</span></a>
+            <a href="#" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> <span>Keluar</span></a>
+        </div>
+    </nav>
+    <main class="main-content">
+        <section id="stok-obat" class="page active">
+            <div class="toolbar"><input type="text" id="drug-stock-search" placeholder="Cari obat..."></div>
+            <div class="table-container"><table class="data-table"><thead><tr><th>Nama Obat</th><th>Stok Saat Ini</th><th>Harga Satuan</th><th>Status</th></tr></thead><tbody id="drug-stock-body"></tbody></table></div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="js/obat-dropdown.js"></script>
+    <script src="js/stok-obat.js"></script>
+    <script src="script.js"></script>
+    <script>
+// if (localStorage.getItem('isLoggedIn') !== 'true') {
+//     window.location.href = 'index.html';
+// }
+</script>
+</body>
+</html>

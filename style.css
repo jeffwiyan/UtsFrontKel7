@@ -265,3 +265,21 @@ body {
 .activity-list li { padding: 0.75rem 0.5rem; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; transition: background-color 0.2s; border-radius: 0.5rem; }
 .activity-list li:hover { background-color: #f9fafb; }
 .activity-list li:last-child { border-bottom: none; }
+
+/* --- Status Badges --- */
+.status-badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 600; font-size: 0.75rem; color: #fff; text-align: center; }
+.status-aktif, .status-selesai, .status-lunas, .status-tersedia { background-color: var(--secondary-color); }
+.status-cuti, .status-belum-lunas, .status-hampir-habis { background-color: var(--warning-color); }
+.status-dibatalkan, .status-habis { background-color: var(--danger-color); }
+.status-terjadwal { background-color: var(--primary-color); }
+
+/* --- Antrian --- */
+.queue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.queue-card { background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: var(--shadow-md); text-align: center; padding: 1.5rem; border-top: 5px solid; }
+.queue-card.poli-umum { border-color: var(--primary-color); }
+.queue-card.poli-anak { border-color: var(--warning-color); }
+.queue-card.poli-bedah { border-color: var(--danger-color); }
+.queue-card .current-number { font-size: 4.5rem; font-weight: 700; margin: 1rem 0; line-height: 1; }
+.waiting-list { margin-top: 1.5rem; text-align: left; background-color: #f9fafb; padding: 1rem; border-radius: var(--border-radius); }
+.waiting-list h4 { margin-bottom: 0.5rem; }
+.waiting-list ul { list-style: none; font-size: 0.9rem; }

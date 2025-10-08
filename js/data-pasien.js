@@ -85,4 +85,3 @@ $(document).ready(function() {
         renderPatientTable($('#patient-search').val().toLowerCase());
     });
 });
-

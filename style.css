@@ -1,3 +1,18 @@
+/* --- Pembayaran Layout Fix --- */
+.billing-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
+@media (min-width: 1025px) {
+    .billing-layout {
+        margin-top: 2.5rem;
+    }
+}
 body {
     min-height: 100vh;
     display: flex;
@@ -22,6 +37,53 @@ body {
     position: sticky;
     top: 0;
 }
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color);
+    min-height: 100vh;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.page {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 2.5rem 2rem;
+}
+
+.billing-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: 0;
+}
+:root {
+    --primary-color: #00bcd4;
+    --secondary-color: #4caf50;
+    --danger-color: #f44336;
+    --warning-color: #ff9800;
+    --info-color: #2196f3;
+    --bg-color: #f0f2f5;
+    --sidebar-bg: #111827;
+    --card-bg: #ffffff;
+    --text-color: #1f2937;
+    --text-color-light: #d1d5db;
+    --border-color: #e5e7eb;
+    --font-family: 'Inter', sans-serif;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --border-radius: 0.75rem;
+    --transition-speed: 0.3s;
+}
+
 /* --- Global & Reset --- */
 * {
     margin: 0;
@@ -284,3 +346,73 @@ body {
 .waiting-list { margin-top: 1.5rem; text-align: left; background-color: #f9fafb; padding: 1rem; border-radius: var(--border-radius); }
 .waiting-list h4 { margin-bottom: 0.5rem; }
 .waiting-list ul { list-style: none; font-size: 0.9rem; }
+
+/* --- Notifikasi Header --- */
+.header-actions { position: relative; }
+.icon-btn { background: none; border: none; font-size: 1.5rem; color: #6b7280; cursor: pointer; position: relative; }
+.badge { position: absolute; top: -5px; right: -8px; background-color: var(--danger-color); color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 0.75rem; display: grid; place-items: center; font-weight: 600; }
+.dropdown-panel { position: absolute; top: 100%; right: 0; background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: var(--shadow-lg); width: 350px; z-index: 100; overflow: hidden; animation: fadeIn 0.2s; }
+.dropdown-panel .panel-header { padding: 1rem; font-weight: 600; border-bottom: 1px solid var(--border-color); }
+#notification-list { list-style: none; max-height: 400px; overflow-y: auto; }
+#notification-list li { padding: 1rem; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; cursor: pointer; }
+#notification-list li:hover { background-color: #f9fafb; }
+#notification-list li.unread { background-color: #eef2ff; }
+
+/* --- Animations --- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* --- Responsive Design --- */
+
+@media (min-width: 1025px) {
+    body {
+        min-height: 100vh;
+    }
+    .main-content {
+        padding: 3.5rem 0 2.5rem 0;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+        border-radius: 1.5rem;
+        background: var(--bg-color);
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #app {
+        flex-direction: column;
+        height: auto;
+    }
+    .main-content {
+        height: auto;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+    .sidebar .logo, .sidebar-menu .menu-header, .sidebar-menu li a span, #username-display {
+        display: none;
+    }
+    .sidebar-menu {
+        display: flex;
+        gap: 0.25rem;
+        flex-grow: 1;
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+    .sidebar-menu li a {
+        padding: 0.75rem;
+    }
+    .sidebar-footer {
+        padding-top: 0;
+        border-top: none;
+        margin-left: auto;
+    }
+    .main-header, .page {
+        padding: 1.5rem;
+    }
+    .main-header h1 {
+        font-size: 1.75rem;
+    }
+}

@@ -14,9 +14,10 @@
 </head>
 
 <body>
-  
+    <!-- SIDEBAR -->
     <nav class="sidebar"></nav>
 
+    <!-- MAIN CONTENT -->
     <main class="main-content">
         <!-- HEADER -->
         <header class="main-header">
@@ -26,7 +27,6 @@
             </div>
 
             <div class="header-actions">
-                <!-- Notifikasi -->
                 <div class="notification-wrapper">
                     <button id="notification-bell" class="icon-btn">
                         <i class="fa-solid fa-bell"></i>
@@ -42,70 +42,77 @@
 
         <div id="notification-banner" class="hidden"></div>
 
-        <!-- ISI DASHBOARD -->
-        <section id="dashboard" class="page active">
-            <div class="stats-grid">
-                <div class="stat-card doctors">
-                    <div class="icon"><i class="fa-solid fa-user-doctor"></i></div>
-                    <div class="info">
-                        <h3 id="stat-doctors">0</h3>
-                        <p>Dokter Aktif</p>
-                    </div>
-                </div>
-
-                <div class="stat-card patients">
-                    <div class="icon"><i class="fa-solid fa-head-side-virus"></i></div>
-                    <div class="info">
-                        <h3 id="stat-patients">0</h3>
-                        <p>Total Pasien</p>
-                    </div>
-                </div>
-
-                <div class="stat-card appointments">
-                    <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
-                    <div class="info">
-                        <h3 id="stat-appointments">0</h3>
-                        <p>Janji Temu Hari Ini</p>
-                    </div>
-                </div>
-
-                <div class="stat-card rooms">
-                    <div class="icon"><i class="fa-solid fa-bed-pulse"></i></div>
-                    <div class="info">
-                        <h3 id="stat-rooms">0/0</h3>
-                        <p>Kamar Terisi</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bagian Aktivitas dan Notifikasi -->
-            <div class="dashboard-grid">
-                <div class="card">
-                    <h2><i class="fa-solid fa-clock-rotate-left"></i> Log Aktivitas Terkini</h2>
-                    <ul id="recent-activity-log" class="activity-list"></ul>
-                </div>
-
-                <div class="card notifications">
-                    <h2><i class="fa-solid fa-bell"></i> Notifikasi Penting</h2>
-
-                    <div class="notification-item warning">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <div>
-                            <h4>Dr. Kenneth Kusnadi Cuti</h4>
-                            <p>Spesialis bedah, cuti hingga 30 Oktober 2024.</p>
+        <!-- KONTEN UTAMA -->
+        <div id="page-content">
+            <!-- ISI DASHBOARD (AWAL) -->
+            <section id="dashboard" class="page active">
+                <div class="stats-grid">
+                    <div class="stat-card doctors">
+                        <div class="icon"><i class="fa-solid fa-user-doctor"></i></div>
+                        <div class="info">
+                            <h3 id="stat-doctors">12</h3>
+                            <p>Dokter Aktif</p>
                         </div>
                     </div>
 
-                    <div class="notification-item info">
-                        <i class="fa-solid fa-circle-info"></i>
-                        <div>
-                            <h4>Vaksinasi Flu Tersedia</h4>
-                            <p>Layanan vaksinasi flu kini tersedia di Poli Umum.</p>
+                    <div class="stat-card patients">
+                        <div class="icon"><i class="fa-solid fa-head-side-virus"></i></div>
+                        <div class="info">
+                            <h3 id="stat-patients">245</h3>
+                            <p>Total Pasien</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card appointments">
+                        <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <div class="info">
+                            <h3 id="stat-appointments">38</h3>
+                            <p>Janji Temu Hari Ini</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card rooms">
+                        <div class="icon"><i class="fa-solid fa-bed-pulse"></i></div>
+                        <div class="info">
+                            <h3 id="stat-rooms">48/60</h3>
+                            <p>Kamar Terisi</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+
+                <!-- Aktivitas dan Notifikasi -->
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h2><i class="fa-solid fa-clock-rotate-left"></i> Log Aktivitas Terkini</h2>
+                        <ul id="recent-activity-log" class="activity-list">
+                            <li>08:00 - Dr. Rina memulai shift pagi</li>
+                            <li>09:15 - Pasien baru terdaftar: Budi Santoso</li>
+                            <li>10:30 - Operasi ortopedi selesai</li>
+                        </ul>
+                    </div>
+
+                    <div class="card notifications">
+                        <h2><i class="fa-solid fa-bell"></i> Notifikasi Penting</h2>
+
+                        <div class="notification-item warning">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <div>
+                                <h4>Dr. Kenneth Kusnadi Cuti</h4>
+                                <p>Spesialis bedah, cuti hingga 30 Oktober 2024.</p>
+                            </div>
+                        </div>
+
+                        <div class="notification-item info">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div>
+                                <h4>Vaksinasi Flu Tersedia</h4>
+                                <p>Layanan vaksinasi flu kini tersedia di Poli Umum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- SCRIPT -->
@@ -115,16 +122,39 @@
     <script src="js/common.js"></script>
     <script src="js/dashboard.js"></script>
 
-    <!-- Muat sidebar otomatis -->
+    <!-- MUAT SIDEBAR -->
     <script>
         $(document).ready(function() {
-            // Load sidebar dari file _sidebar.html
+            // Muat sidebar dari file eksternal
             $(".sidebar").load("_sidebar.html", function() {
-                // Tandai halaman aktif di sidebar
-                const currentPage = location.pathname.split("/").pop();
+                // Tandai halaman aktif
                 $('.sidebar-menu a').each(function() {
-                    if ($(this).attr('href') === currentPage) {
+                    if ($(this).attr('href') === 'dashboard.html') {
                         $(this).addClass('active');
+                    }
+                });
+
+                // Tangani klik menu tanpa reload halaman
+                $('.sidebar-menu a').on('click', function(e) {
+                    e.preventDefault();
+                    const targetUrl = $(this).attr('href');
+
+                    // Tandai menu aktif
+                    $('.sidebar-menu a').removeClass('active');
+                    $(this).addClass('active');
+
+                    // Jika dashboard diklik, tampilkan ulang konten default
+                    if (targetUrl === 'dashboard.html') {
+                        $('#page-title').text('Dashboard');
+                        $('#page-subtitle').text('Ringkasan aktivitas rumah sakit hari ini.');
+                        $('#page-content').load('dashboard.html #dashboard > *');
+                    } else {
+                        // Muat hanya isi konten utama dari file target (tanpa sidebar)
+                        $('#page-content').load(targetUrl + ' #page-content > *', function(response, status) {
+                            if (status === "error") {
+                                $('#page-content').html("<p>Gagal memuat halaman.</p>");
+                            }
+                        });
                     }
                 });
             });
